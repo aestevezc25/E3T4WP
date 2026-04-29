@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEBGUNE PRIBATUA</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="" class="logo active">GameStop<span></span></a>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="" class="nav-link active"><span>Hasiera</span></a></li>
+                <li><a href="bezero/" class="nav-link"><span>Bezeroak</span></a></li>
+                <li><a href="biltegi/" class="nav-link"><span>Biltegiak</span></a></li>
+                <li><a href="bulegari/" class="nav-link"><span>Bulegariak</span></a></li>
+                <li><a href="eskari/" class="nav-link"> <span>Eskariak</span></a></li>
+                <li><a href="produktu-konplexuak/" class="nav-link"><span>Produktu Konplexuak</span></a></li>               
+                <li><a href="produktu-sinpleak/" class="nav-link"><span>Produktu Sinpleak</span></a></li>               
+                <li><a href="saltzaileak/" class="nav-link"><span>Saltzaileak</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="breadcrumb"><strong>Hasiera</strong> / Panela</div>
+            <div class="user-info" style="display: flex; align-items: center; gap: 12px;">
+                <span class="user-name" style="font-weight: 500;">Admin Erabiltzailea</span>
+                <img src="/img/avatar/untitled20.png" alt="Avatar" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-color);" />
+            </div>
+        </header>
+
+        <section class="content-wrapper">
+            
+            <div class="card-box welcome-banner">
+                <div class="card-body">
+                    <h1>Ongi etorri, Admin! 👋</h1>
+                    <p>Hemen duzu zure kudeaketa sistemaren laburpena.</p>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="card-box stat-card">
+                    <div class="card-body">
+                        <h3>Bezero Guztiak</h3>
+                        <div class="stat-value">1,248</div>
+                    </div>
+                </div>
+                <div class="card-box stat-card">
+                    <div class="card-body">
+                        <h3>Eskari Berriak</h3>
+                        <div class="stat-value">56</div>
+                    </div>
+                </div>
+                <div class="card-box stat-card">
+                    <div class="card-body">
+                        <h3>Sarrerak (Hilekoak)</h3>
+                        <div class="stat-value text-primary">€24,500</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-box">
+                <div class="card-header">
+                    <h2>Azken Aktibitatea</h2>
+                    <button class="btn-primary">+ Erregistro Berria</button>
+                </div>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Izena / Deskribapena</th>
+                                <th>Egoera</th>
+                                <th class="text-right">Ekintzak</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <xsl:for-each select="//*[local-name()='producto' or local-name()='bezero']">
+                                <tr>
+                                    <td><strong>#67<xsl:value-of select="@id"/></strong></td>
+                                    <td><xsl:value-of select="izena | nombre"/>Pedro Gómez</td>
+                                    <td><span class="badge success">Aktiboa</span></td>
+                                    <td class="text-right">
+                                        <button class="btn-secondary">Ikusi</button>
+                                    </td>
+                                </tr>
+                            </xsl:for-each>
+                            
+                            <tr>
+                                <td><strong>#1042</strong></td>
+                                <td>Mikel Etxebarria</td>
+                                <td><span class="badge warning">Zain</span></td>
+                                <td class="text-right">
+                                    <button class="btn-secondary">Ikusi</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
